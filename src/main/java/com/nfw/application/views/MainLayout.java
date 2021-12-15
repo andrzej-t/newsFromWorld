@@ -65,7 +65,7 @@ public class MainLayout extends AppLayout {
         Div layout = new Div();
         layout.addClassNames("flex", "h-xl", "items-center", "px-l");
 
-        H1 appName = new H1("News From World");
+        H1 appName = new H1("NEWS FROM WORLD - information search application");
         appName.addClassNames("my-0", "me-auto", "text-l");
         layout.add(appName);
 
@@ -88,13 +88,13 @@ public class MainLayout extends AppLayout {
 
     private List<RouterLink> createLinks() {
         MenuItemInfo[] menuItems = new MenuItemInfo[]{ //
-                new MenuItemInfo("Login", "la la-globe", LoginView.class), //
+                new MenuItemInfo("LOGIN", "la la-unlock", LoginView.class), //
 
-                new MenuItemInfo("About", "la la-file", AboutView.class), //
+                new MenuItemInfo("ABOUT", "la la-info", AboutView.class), //
 
-                new MenuItemInfo("Search", "la la-file", SearchView.class), //
+                new MenuItemInfo("SEARCH", "la la-search", SearchView.class), //
 
-                new MenuItemInfo("Favorite", "la la-file", FavoriteView.class), //
+                new MenuItemInfo("FAVORITE", "la la-heart", FavoriteView.class), //
 
         };
         List<RouterLink> links = new ArrayList<>();

@@ -15,17 +15,19 @@ public class AboutView extends VerticalLayout {
     public AboutView() {
         setSpacing(false);
 
-        Image img = new Image("images/empty-plant.png", "placeholder plant");
-        img.setWidth("200px");
-        add(img);
-
-        add(new H2("This place intentionally left empty"));
-        add(new Paragraph("It’s a place where you can grow your own UI 🤗"));
+        add(new H2("Welcome in NEWS FROM WORLD!!!"));
+        add(new Paragraph("It is a web application supporting information search. Every week, you will find around " +
+                "a million different articles from over 40,000 sources in 50+ countries. You can parameterize the data you " +
+                "are interested in by selecting " +
+                "the language of the article, region of the world or keywords. After selecting the appropriate filters, " +
+                "just press the search button and it's ready! Links to the materials you are interested in are displayed right in front of you."));
+        add(new Paragraph("This project is completely non-commercial and the use of the application is free. After creating a login " +
+                "and password, you will be able to save your favorite links (along with information about the source) on your free account. " +
+                "I hope that the tool I have prepared for you will be helpful while searching the web. Have a good fun!"));
 
         setSizeFull();
-        setJustifyContentMode(JustifyContentMode.CENTER);
+        setJustifyContentMode(JustifyContentMode.START);
         setDefaultHorizontalComponentAlignment(Alignment.CENTER);
-        getStyle().set("text-align", "center");
     }
 
 }
