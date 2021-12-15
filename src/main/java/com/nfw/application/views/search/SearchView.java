@@ -27,7 +27,7 @@ public class SearchView extends VerticalLayout {
     public SearchView() {
 
         textField.getElement().setAttribute("aria-label", "search");
-        textField.setPlaceholder("Search");
+        textField.setPlaceholder("Key word...");
         textField.setClearButtonVisible(true);
         textField.setPrefixComponent(VaadinIcon.SEARCH.create());
         textField.setMaxLength(100);
