@@ -34,7 +34,6 @@ public class LoginView extends HorizontalLayout {
     Button deleteBtn = new Button("Delete");
     HorizontalLayout signBtns = new HorizontalLayout();
 
-
     public LoginView() {
 
         username.setPrefixComponent(VaadinIcon.USER.create());
@@ -44,7 +43,7 @@ public class LoginView extends HorizontalLayout {
         password.setValue("");
         loginBtn.getElement().getStyle()
                 .set("color", "#ffffff")
-                .set("background", "#33ab4b");
+                .set("background", "#338be9");
 
         usernameS.setPrefixComponent(VaadinIcon.USER.create());
         emailS.setLabel("Insert your email");
@@ -54,7 +53,7 @@ public class LoginView extends HorizontalLayout {
         passwordS.setValue("");
         signInBtn.getElement().getStyle()
                 .set("color", "#ffffff")
-                .set("background", "#33ab4b");
+                .set("background", "#338be9");
         deleteBtn.getElement().getStyle()
                 .set("color", "#ffffff")
                 .set("background", "red");
@@ -73,7 +72,7 @@ public class LoginView extends HorizontalLayout {
         add(loginLayout);
         add(signInLayout);
 
-
     }
 
 }
+

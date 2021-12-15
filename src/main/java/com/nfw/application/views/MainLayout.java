@@ -20,9 +20,6 @@ import com.vaadin.flow.theme.Theme;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * The main view is a top-level placeholder for other views.
- */
 @PWA(name = "News From World", shortName = "News From World", enableInstallPrompt = false)
 @Theme(themeFolder = "newsfromworld")
 @PageTitle("Main")
@@ -124,3 +121,4 @@ public class MainLayout extends AppLayout {
     }
 
 }
+
