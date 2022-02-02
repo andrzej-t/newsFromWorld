@@ -1,6 +1,6 @@
 package com.nfw.application.views.search;
 
-import com.nfw.application.domain.InformationDto;
+import com.nfw.application.domain.Publication;
 import com.nfw.application.views.MainLayout;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;
@@ -22,7 +22,7 @@ public class SearchView extends VerticalLayout {
     Select<String> selectReg = new Select<>();
     Select<String> selectCategory = new Select<>();
     Button searchingBtn = new Button("Search");
-    Grid<InformationDto> gridResults = new Grid<>(InformationDto.class);
+    Grid<Publication> gridResults = new Grid<>(Publication.class);
 
     public SearchView() {
 
@@ -53,6 +53,14 @@ public class SearchView extends VerticalLayout {
         add(filteringLayout);
 
         gridResults.setWidth("100%");
+        gridResults.setColumns("source", "title", "description", "url", "language", "published_at");
+        gridResults.setColumnOrder(gridResults.getColumns());
+        gridResults.getColumnByKey("source").setSortable(false);
+        gridResults.getColumnByKey("title").setSortable(false);
+        gridResults.getColumnByKey("description").setSortable(false);
+        gridResults.getColumnByKey("url").setSortable(false);
+        gridResults.getColumnByKey("language").setSortable(false);
+        gridResults.getColumnByKey("published_at").setHeader("Publication date");
         add(gridResults);
     }
 

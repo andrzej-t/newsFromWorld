@@ -58,6 +58,7 @@ public class MainLayout extends AppLayout {
     private Component createHeaderContent() {
         Header header = new Header();
         header.addClassNames("bg-base", "border-b", "border-contrast-10", "box-border", "flex", "flex-col", "w-full");
+        header.getStyle().set("background-color", "#d2d2d2");
 
         Div layout = new Div();
         layout.addClassNames("flex", "h-xl", "items-center", "px-l");

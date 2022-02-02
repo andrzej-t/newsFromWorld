@@ -20,8 +20,8 @@ public class AboutView extends VerticalLayout {
                 "are interested in by selecting " +
                 "the language of the article, region of the world or keywords. After selecting the appropriate filters, " +
                 "just press the search button and it's ready! Links to the materials you are interested in are displayed right in front of you."));
-        add(new Paragraph("This project is completely non-commercial and the use of the application is free. After creating a login " +
-                "and password, you will be able to save your favorite links (along with information about the source) on your free account. " +
+        add(new Paragraph("This project is completely non-commercial and the use of the application is free. After adding your email as a login " +
+                "and creating password, you will be able to save your favorite links (along with information about the source) on your free account. Application doesn\'t send any spam. " +
                 "I hope that the tool I have prepared for you will be helpful while searching the web. Have a good fun!"));
 
         setSizeFull();
