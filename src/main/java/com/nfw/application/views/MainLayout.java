@@ -1,35 +1,31 @@
 package com.nfw.application.views;
 
 import com.nfw.application.views.about.AboutView;
-import com.nfw.application.views.favorite.FavoriteView;
 import com.nfw.application.views.login.LoginView;
 import com.nfw.application.views.search.SearchView;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.applayout.AppLayout;
-import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.html.H1;
-import com.vaadin.flow.component.html.Header;
-import com.vaadin.flow.component.html.ListItem;
-import com.vaadin.flow.component.html.Nav;
-import com.vaadin.flow.component.html.Span;
-import com.vaadin.flow.component.html.UnorderedList;
+import com.vaadin.flow.component.html.*;
+import com.vaadin.flow.component.page.BodySize;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.server.PWA;
 import com.vaadin.flow.theme.Theme;
+
 import java.util.ArrayList;
 import java.util.List;
 
 @PWA(name = "News From World", shortName = "News From World", enableInstallPrompt = false)
 @Theme(themeFolder = "newsfromworld")
 @PageTitle("Main")
+@BodySize(height = "100%", width = "100%")
 public class MainLayout extends AppLayout {
 
     public static class MenuItemInfo {
 
-        private String text;
-        private String iconClass;
-        private Class<? extends Component> view;
+        private final String text;
+        private final String iconClass;
+        private final Class<? extends Component> view;
 
         public MenuItemInfo(String text, String iconClass, Class<? extends Component> view) {
             this.text = text;
@@ -48,7 +44,6 @@ public class MainLayout extends AppLayout {
         public Class<? extends Component> getView() {
             return view;
         }
-
     }
 
     public MainLayout() {
@@ -63,7 +58,7 @@ public class MainLayout extends AppLayout {
         Div layout = new Div();
         layout.addClassNames("flex", "h-xl", "items-center", "px-l");
 
-        H1 appName = new H1("NEWS FROM WORLD - information search application");
+        H1 appName = new H1("NEWS FROM WORLD - publication search-based application");
         appName.addClassNames("my-0", "me-auto", "text-l");
         layout.add(appName);
 
@@ -85,6 +80,7 @@ public class MainLayout extends AppLayout {
     }
 
     private List<RouterLink> createLinks() {
+
         MenuItemInfo[] menuItems = new MenuItemInfo[]{ //
                 new MenuItemInfo("LOGIN", "la la-unlock", LoginView.class), //
 
@@ -92,9 +88,9 @@ public class MainLayout extends AppLayout {
 
                 new MenuItemInfo("SEARCH", "la la-search", SearchView.class), //
 
-                new MenuItemInfo("FAVORITE", "la la-heart", FavoriteView.class), //
-
+//                new MenuItemInfo("FAVORITE", "la la-heart", FavoriteView.class), //
         };
+
         List<RouterLink> links = new ArrayList<>();
         for (MenuItemInfo menuItemInfo : menuItems) {
             links.add(createLink(menuItemInfo));
@@ -107,7 +103,6 @@ public class MainLayout extends AppLayout {
         RouterLink link = new RouterLink();
         link.addClassNames("flex", "h-m", "items-center", "px-s", "relative", "text-secondary");
         link.setRoute(menuItemInfo.getView());
-
         Span icon = new Span();
         icon.addClassNames("me-s", "text-l");
         if (!menuItemInfo.getIconClass().isEmpty()) {
@@ -118,8 +113,7 @@ public class MainLayout extends AppLayout {
         text.addClassNames("font-medium", "text-s", "whitespace-nowrap");
 
         link.add(icon, text);
+
         return link;
     }
-
 }
-
